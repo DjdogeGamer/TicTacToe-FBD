@@ -1,3 +1,5 @@
+/* criação das tabelas */
+
 CREATE TABLE jogador (
 	idJogador INT NOT NULL UNIQUE,
 	nomeJogador VARCHAR(255),
@@ -14,12 +16,12 @@ CREATE TABLE jogador (
 );
 
 CREATE TABLE jogo (
-	idJogo INT NOT NULL UNIQUE,
+	idJogo INT NOT NULL UNIQUE AUTO_INCREMENT,
 	nome VARCHAR(255),
     senha VARCHAR(255),
     modoJogo INT NOT NULL,
-    idJogador1 INT NOT NULL UNIQUE,
-    idJogador2 INT NOT NULL UNIQUE,
+    idJogador1 INT NOT NULL,
+    idJogador2 INT NOT NULL,
     pontuacao1 INT,
     pontuacao2 INT,
 	dataJogo DATE,
@@ -29,6 +31,8 @@ CREATE TABLE jogo (
 );
 
 ALTER TABLE jogo ADD tempoJogo TIME;
+
+/* inserção de dados - jogadores */
 
 INSERT INTO jogador(idJogador, nomeJogador, nacionalidade, nomeUsuario, senha, posicaoRanking, 
 vitorias, derrotas, empates, tempoTotalJogo, totalJogos) VALUES (1000, "Calos Eduardo", "Brasil",
@@ -55,6 +59,40 @@ vitorias, derrotas, empates, tempoTotalJogo, totalJogos) VALUES (2043, "Sam Rock
 "letsrock", "rock1234", 5, 200, 150, 50, 13.3, 400);
 
 UPDATE jogador SET nacionalidade = 'Moçambique' WHERE idJogador = 1467;
+
+/* inserção de dados - jogos */
+
+INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
+pontuacao2, dataJogo) VALUES ("Jogo Legal", "", 3, 2043, 0894, 20, 50, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
+
+INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
+pontuacao2, dataJogo) VALUES ("Maçã", "12345", 2, 2043, 3521, 2, 0, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
+
+INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
+pontuacao2, dataJogo) VALUES ("Blueberry", "blue", 3, 1467, 3521, 0, 2, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
+
+INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
+pontuacao2, dataJogo) VALUES ("", "", 1, 1467, 3521, 1, 1, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
+
+INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
+pontuacao2, dataJogo) VALUES ("", "", 3, 0894, 0034, 2, 0, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
+
+INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
+pontuacao2, dataJogo) VALUES ("informática", "", 2, 2043, 0034, 0, 2, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
+
+INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
+pontuacao2, dataJogo) VALUES ("cloud", "23042002", 1, 1467, 1000, 0, 2, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
+
+INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
+pontuacao2, dataJogo) VALUES ("cloud", "23042002", 1, 2043, 1000, 1, 1, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
+
+INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
+pontuacao2, dataJogo) VALUES ("", "", 3, 0894, 0034, 0, 2, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
+
+INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
+pontuacao2, dataJogo) VALUES ("chocolate", "happy", 3, 1467, 0894, 1, 1, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
+
+/* respondendo aos questionamentos da atividade */
 
 /* 1. Quais os dados pessoais de um dado jogador? */
 SELECT nomeJogador FROM jogador WHERE nomeJogador = "Kinga Nowak";
