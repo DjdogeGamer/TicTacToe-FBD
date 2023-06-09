@@ -109,5 +109,3 @@ SELECT (SUM(empates) * 100)/SUM(totalJogos) FROM jogador;
 /* 9. Qual a percentagem de vitórias para todos os jogadores? */
 SELECT nomeJogador, (vitorias * 100)/totalJogos FROM jogador ORDER BY (vitorias * 100)/totalJogos DESC;
 
-/* Ranking de jogadores */
-SELECT * FROM jogador ORDER BY posicaoRanking;
