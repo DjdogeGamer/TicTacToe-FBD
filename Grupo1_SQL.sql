@@ -15,6 +15,8 @@ CREATE TABLE jogador (
     PRIMARY KEY (idJogador)
 );
 
+ALTER TABLE jogador ADD pontos INT;
+
 CREATE TABLE jogo (
 	idJogo INT NOT NULL UNIQUE AUTO_INCREMENT,
 	nome VARCHAR(255),
@@ -92,23 +94,31 @@ pontuacao2, dataJogo) VALUES ("", "", 3, 0894, 0034, 0, 2, STR_TO_DATE('2023-06-
 INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
 pontuacao2, dataJogo) VALUES ("chocolate", "happy", 3, 1467, 0894, 1, 1, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
 
+INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
+pontuacao2, dataJogo) VALUES ("dados", "euamocomputacao", 1, 0034, 2043, 0, 2, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
+
 /* respondendo aos questionamentos da atividade */
 
 /* 1. Quais os dados pessoais de um dado jogador? */
-SELECT nomeJogador FROM jogador WHERE nomeJogador = "Kinga Nowak";
+SELECT * FROM jogador WHERE nomeJogador = "Kinga Nowak";
 
 /* 3. Quantos jogos realizaram todos os jogadores? */
-SELECT SUM(totalJogos) FROM jogador;
+SELECT COUNT(idJogo) FROM jogo;
 
-/* 6. Quais os três países com melhor desempenho? */
-SELECT nacionalidade, MAX(vitorias) FROM jogador GROUP BY nacionalidade ORDER BY MAX(vitorias) DESC LIMIT 3;
+/* EXTRA. Quantos jogos jogou cada jogador? - count where na tabela de jogo */
 
-/* 7. Qual a percentagem de empates considerando todos os jogos? */
+
+/* 6. Quais os três países com melhor desempenho? - tem que ser feito com pontos */
+SELECT nacionalidade, SUM(vitorias) FROM jogador GROUP BY nacionalidade ORDER BY SUM(vitorias) DESC LIMIT 3;
+
+/* 7. Qual a percentagem de empates considerando todos os jogos? - alterar para a tabela de jogos */
 SELECT (SUM(empates) * 100)/SUM(totalJogos) FROM jogador;
 
-/* 9. Qual a percentagem de vitórias para todos os jogadores? */
+/* 9. Qual a percentagem de vitórias considerando todos os jogos? - alterar para a tabela de jogos */
+SELECT (SUM(empates) * 100)/SUM(totalJogos) FROM jogador;
+
+/* EXTRA. Qual a percentagem de vitórias para cada jogador? */
 SELECT nomeJogador, (vitorias * 100)/totalJogos FROM jogador ORDER BY (vitorias * 100)/totalJogos DESC;
 
 /* Ranking de jogadores */
 SELECT * FROM jogador ORDER BY posicaoRanking;
-
