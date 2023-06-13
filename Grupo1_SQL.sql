@@ -62,6 +62,17 @@ vitorias, derrotas, empates, tempoTotalJogo, totalJogos) VALUES (2043, "Sam Rock
 
 UPDATE jogador SET nacionalidade = 'Moçambique' WHERE idJogador = 1467;
 
+UPDATE jogador SET totalJogos = (SELECT COUNT(idJogo) FROM jogo WHERE idJogador1 = 1000 OR idJogador2 = 1000) WHERE idJogador = 1000;
+UPDATE jogador SET totalJogos = (SELECT COUNT(idJogo) FROM jogo WHERE idJogador1 = 0034 OR idJogador2 = 0034) WHERE idJogador = 0034;
+UPDATE jogador SET totalJogos = (SELECT COUNT(idJogo) FROM jogo WHERE idJogador1 = 0894 OR idJogador2 = 0894) WHERE idJogador = 0894;
+UPDATE jogador SET totalJogos = (SELECT COUNT(idJogo) FROM jogo WHERE idJogador1 = 1467 OR idJogador2 = 1467) WHERE idJogador = 1467;
+UPDATE jogador SET totalJogos = (SELECT COUNT(idJogo) FROM jogo WHERE idJogador1 = 2043 OR idJogador2 = 2043) WHERE idJogador = 2043;
+UPDATE jogador SET totalJogos = (SELECT COUNT(idJogo) FROM jogo WHERE idJogador1 = 3521 OR idJogador2 = 3521) WHERE idJogador = 3521;
+SELECT * FROM jogador;
+
+SELECT * FROM jogo;
+
+
 /* inserção de dados - jogos */
 
 INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
@@ -97,7 +108,7 @@ pontuacao2, dataJogo) VALUES ("chocolate", "happy", 3, 1467, 0894, 1, 1, STR_TO_
 INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1, 
 pontuacao2, dataJogo) VALUES ("dados", "euamocomputacao", 1, 0034, 2043, 0, 2, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
 
-/* respondendo aos questionamentos da atividade */
+/* Respondendo aos questionamentos da atividade */
 
 /* 1. Quais os dados pessoais de um dado jogador? */
 SELECT * FROM jogador WHERE nomeJogador = "Kinga Nowak";
