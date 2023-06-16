@@ -38,55 +38,6 @@ CREATE TABLE jogo
     FOREIGN KEY (idJogador2) REFERENCES jogador (idJogador)
 );
 
-/* inserção de dados - jogos */
-
-INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1,
-                 pontuacao2, dataJogo)
-VALUES ("Jogo Legal", "", 3, 2043, 0894, 20, 50, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
-
-INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1,
-                 pontuacao2, dataJogo)
-VALUES ("Maçã", "12345", 2, 2043, 3521, 2, 0, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
-
-INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1,
-                 pontuacao2, dataJogo)
-VALUES ("Blueberry", "blue", 3, 1467, 3521, 0, 2, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
-
-INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1,
-                 pontuacao2, dataJogo)
-VALUES ("", "", 1, 1467, 3521, 1, 1, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
-
-INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1,
-                 pontuacao2, dataJogo)
-VALUES ("", "", 3, 0894, 0034, 2, 0, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
-
-INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1,
-                 pontuacao2, dataJogo)
-VALUES ("informática", "", 2, 2043, 0034, 0, 2, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
-
-INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1,
-                 pontuacao2, dataJogo)
-VALUES ("cloud", "23042002", 1, 1467, 1000, 0, 2, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
-
-INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1,
-                 pontuacao2, dataJogo)
-VALUES ("cloud", "23042002", 1, 2043, 1000, 1, 1, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
-
-INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1,
-                 pontuacao2, dataJogo)
-VALUES ("", "", 3, 0894, 0034, 0, 2, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
-
-INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1,
-                 pontuacao2, dataJogo)
-VALUES ("chocolate", "happy", 3, 1467, 0894, 1, 1, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
-
-INSERT INTO jogo(nome, senha, modoJogo, idJogador1, idJogador2, pontuacao1,
-                 pontuacao2, dataJogo)
-VALUES ("dados", "euamocomputacao", 1, 0034, 2043, 0, 2, STR_TO_DATE('2023-06-06', '%Y-%m-%d'));
-
-
-/* Test Queries (Gustavo). */
-
 /* Inserção de dados - Jogador */
 
 INSERT INTO jogador (idJogador,
@@ -101,7 +52,7 @@ INSERT INTO jogador (idJogador,
                      pontos,
                      tempoTotalJogo,
                      totalJogos)
-VALUES (1000, "Simona Urbutis", "Lituania", "simonurb", "senha123", 3, 9, 5, 2, 50, 21, 16);
+VALUES (1000, "Simona Urbutis", "Lituania", "simonurb", "senha123", 3, 0, 0, 0, 0, 0, 0);
 
 INSERT INTO jogador (idJogador,
                      nomeJogador,
@@ -115,7 +66,7 @@ INSERT INTO jogador (idJogador,
                      pontos,
                      tempoTotalJogo,
                      totalJogos)
-VALUES (1001, "Masha Tarkovsky", "Ucrania", "mashatarkov", "senha123", 5, 11, 4, 3, 50, 19, 9);
+VALUES (1001, "Masha Tarkovsky", "Ucrania", "mashatarkov", "senha123", 5, 0, 0, 0, 0, 0, 0);
 
 INSERT INTO jogador (idJogador,
                      nomeJogador,
@@ -129,7 +80,7 @@ INSERT INTO jogador (idJogador,
                      pontos,
                      tempoTotalJogo,
                      totalJogos)
-VALUES (1002, "Ella Heidi", "Alemanha", "heidii222", "senha123", 9, 11, 7, 7, 10, 11, 2);
+VALUES (1002, "Ella Heidi", "Alemanha", "heidii222", "senha123", 9, 0, 0, 0, 0, 0, 0);
 
 INSERT INTO jogador (idJogador,
                      nomeJogador,
@@ -143,7 +94,53 @@ INSERT INTO jogador (idJogador,
                      pontos,
                      tempoTotalJogo,
                      totalJogos)
-VALUES (1003, "Bihn Tihn", "Vietname", "tihntihn", "senha123", 1, 15, 5, 1, 65, 55, 29);
+VALUES (1003, "Bihn Tihn", "Vietname", "tihntihn", "senha123", 1, 0, 0, 0, 0, 0, 0);
+
+/* Inserção de dados - Jogos */
+
+INSERT INTO jogo (nome,
+                  senha,
+                  modoJogo,
+                  idJogador1,
+                  idJogador2,
+                  pontuacao1,
+                  pontuacao2,
+                  dataJogo,
+                  tempoJogo)
+VALUES ("starman", "123", 1, 1000, 1001, 15, 25, '2023-06-12', 10);
+
+INSERT INTO jogo (nome,
+                  senha,
+                  modoJogo,
+                  idJogador1,
+                  idJogador2,
+                  pontuacao1,
+                  pontuacao2,
+                  dataJogo,
+                  tempoJogo)
+VALUES ("hotelcalifornia", "456", 1, 1000, 1001, 10, 15, '2023-06-13', 20);
+
+INSERT INTO jogo (nome,
+                  senha,
+                  modoJogo,
+                  idJogador1,
+                  idJogador2,
+                  pontuacao1,
+                  pontuacao2,
+                  dataJogo,
+                  tempoJogo)
+VALUES ("psychokiller", "789", 1, 1002, 1003, 20, 20, '2023-06-14', 30);
+
+INSERT INTO jogo (nome,
+                  senha,
+                  modoJogo,
+                  idJogador1,
+                  idJogador2,
+                  pontuacao1,
+                  pontuacao2,
+                  dataJogo,
+                  tempoJogo)
+VALUES ("runaway", "987", 1, 1002, 1003, 30, 20, '2023-06-15', 40);
 
 UPDATE jogador 
 SET totalJogos = (SELECT COUNT(idJogo) FROM jogo WHERE idJogador1 = 1000 OR idJogador2 = 1000) 
@@ -154,29 +151,8 @@ WHERE idJogador = 1001;
 UPDATE jogador
 SET totalJogos = (SELECT COUNT(idJogo) FROM jogo WHERE idJogador1 = 1002 OR idJogador2 = 1002)
 WHERE idJogador = 1002;
-UPDATE jogador
-SET totalJogos = (SELECT COUNT(idJogo) FROM jogo WHERE idJogador1 = 1003 OR idJogador2 = 1003)
-WHERE idJogador = 1003;
-
-UPDATE jogador SET vitorias = 0 WHERE idJogador = 1000;
-UPDATE jogador SET vitorias = 0 WHERE idJogador = 1001;
-UPDATE jogador SET vitorias = 0 WHERE idJogador = 1002;
-UPDATE jogador SET vitorias = 0 WHERE idJogador = 1003;
-
-UPDATE jogador SET derrotas = 0 WHERE idJogador = 1000;
-UPDATE jogador SET derrotas = 0 WHERE idJogador = 1001;
-UPDATE jogador SET derrotas = 0 WHERE idJogador = 1002;
-UPDATE jogador SET derrotas = 0 WHERE idJogador = 1003;
-
-UPDATE jogador SET empates = 0 WHERE idJogador = 1000;
-UPDATE jogador SET empates = 0 WHERE idJogador = 1001;
-UPDATE jogador SET empates = 0 WHERE idJogador = 1002;
-UPDATE jogador SET empates = 0 WHERE idJogador = 1003;
-
-UPDATE jogador SET pontos = 0 WHERE idJogador = 1000;
-UPDATE jogador SET pontos = 0 WHERE idJogador = 1001;
-UPDATE jogador SET pontos = 0 WHERE idJogador = 1002;
-UPDATE jogador SET pontos = 0 WHERE idJogador = 1003;
+UPDATE jogador 
+SET totalJogos = (SELECT COUNT(idJogo) FROM jogo WHERE idJogador1 = 1003 OR idJogador2 = 1003);
 
 UPDATE jogador SET tempoTotalJogo = (totalJogos * 5) WHERE idJogador = 1000;
 UPDATE jogador SET tempoTotalJogo = (totalJogos * 5) WHERE idJogador = 1001;
@@ -195,7 +171,6 @@ WHERE (jogo.idJogador1 = 1000 AND jogo.pontuacao1 > jogo.pontuacao2);
 UPDATE jogador JOIN jogo ON jogador.idJogador = jogo.idJogador1
 SET jogador.vitorias = jogador.vitorias + 1 
 WHERE (jogo.idJogador1 = 1002 AND jogo.pontuacao1 > jogo.pontuacao2);
-
 
 UPDATE jogador SET derrotas = derrotas + 
 (SELECT COUNT(*) FROM jogo WHERE jogador.idJogador = jogo.idJogador1
@@ -260,61 +235,13 @@ UPDATE jogador SET pontos = pontos +
 (SELECT SUM(pontuacao2) FROM jogo WHERE jogo.idJogador2 = 1003) 
 WHERE idJogador = 1003;
 
-SELECT * FROM jogador;
-SELECT * FROM jogo;
-
-/* Inserção de dados - Jogos */
-
-INSERT INTO jogo (nome,
-                  senha,
-                  modoJogo,
-                  idJogador1,
-                  idJogador2,
-                  pontuacao1,
-                  pontuacao2,
-                  dataJogo,
-                  tempoJogo)
-VALUES ("starman", "123", 1, 1000, 1001, 15, 25, '2023-06-12', 10);
-
-INSERT INTO jogo (nome,
-                  senha,
-                  modoJogo,
-                  idJogador1,
-                  idJogador2,
-                  pontuacao1,
-                  pontuacao2,
-                  dataJogo,
-                  tempoJogo)
-VALUES ("hotelcalifornia", "456", 1, 1000, 1001, 10, 15, '2023-06-13', 20);
-
-INSERT INTO jogo (nome,
-                  senha,
-                  modoJogo,
-                  idJogador1,
-                  idJogador2,
-                  pontuacao1,
-                  pontuacao2,
-                  dataJogo,
-                  tempoJogo)
-VALUES ("psychokiller", "789", 1, 1002, 1003, 20, 20, '2023-06-14', 30);
-
-INSERT INTO jogo (nome,
-                  senha,
-                  modoJogo,
-                  idJogador1,
-                  idJogador2,
-                  pontuacao1,
-                  pontuacao2,
-                  dataJogo,
-                  tempoJogo)
-VALUES ("runaway", "987", 1, 1002, 1003, 30, 20, '2023-06-15', 40);
-
 /* Respondendo aos questionamentos da atividade */
 
 SELECT * FROM jogo;
 SELECT * FROM jogador;
 
 /* 1. Quais os dados pessoais de um dado jogador? */
+
 SELECT *
 FROM jogador
 WHERE nomeJogador = "Ella Heidi";
