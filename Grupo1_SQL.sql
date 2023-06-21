@@ -259,6 +259,26 @@ SELECT COUNT(idJogo) AS totalJogos
 FROM jogo;
 
 /* 4. Quais os nomes dos jogadores associados a uma dada sala? */
+SELECT j.nomeJogador
+FROM jogador j
+JOIN jogo jo ON j.idJogador = jo.idJogador1 OR j.idJogador = jo.idJogador2
+WHERE jo.nome = 'starman';
+
+SELECT j.nomeJogador
+FROM jogador j
+JOIN jogo jo ON j.idJogador = jo.idJogador1 OR j.idJogador = jo.idJogador2
+WHERE jo.nome = 'hotelcalifornia';
+
+SELECT j.nomeJogador
+FROM jogador j
+JOIN jogo jo ON j.idJogador = jo.idJogador1 OR j.idJogador = jo.idJogador2
+WHERE jo.nome = 'psychokiller';
+
+SELECT j.nomeJogador
+FROM jogador j
+JOIN jogo jo ON j.idJogador = jo.idJogador1 OR j.idJogador = jo.idJogador2
+WHERE jo.nome = 'runaway';
+
 
 /*
 Procura o nome do jogador (1 ou 2) que esta associado (inner join) a um jogo com o nome da sala
